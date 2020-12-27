@@ -9,8 +9,9 @@ function List() {
         transform: 'translate(-45%, -50%)',
     };
     return (
-        <div>
-            <ul>
+        <div  >
+
+            <ul >
                 <ListItem />
             </ul>
             <br />

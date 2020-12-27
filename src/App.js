@@ -1,8 +1,10 @@
+import { useEffect } from 'react';
 import EntryForm from './EntryForm';
 import List from './List';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import { useGlobalContext } from './context';
 
 const useStyles = makeStyles({
   root: {
@@ -21,9 +23,10 @@ const useStyles = makeStyles({
 });
 
 function App() {
+  const { handleSubmit } = useGlobalContext();
   const classes = useStyles();
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} onClick={handleSubmit}>
       <p className={classes.title}>To do or Not to do</p>
       <CardContent >
       <EntryForm />
