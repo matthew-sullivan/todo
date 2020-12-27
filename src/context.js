@@ -17,9 +17,11 @@ function AppProvider({ children }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newItem = state.name;
-        setItems([...items, { id: items.length, name: newItem, clicked: false }]);
-        dispatch({ type: ACTIONS.SET_NAME, payload: ''});
+        if (state.name) {
+            const newItem = state.name;
+            setItems([...items, { id: items.length, name: newItem, clicked: false }]);
+            dispatch({ type: ACTIONS.SET_NAME, payload: ''});
+        } 
     }
     
     const setName = (id) => {
