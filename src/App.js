@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import EntryForm from './EntryForm';
 import List from './List';
 import CompleteList from './CompleteList';
