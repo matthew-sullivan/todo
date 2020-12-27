@@ -14,7 +14,9 @@ function ListItem() {
             { 
                 items.map(
                     (item) => {
-                        return <li key={item.id} style={item.clicked ? striker : null}><Button onClick={() => setClicked(item.id)}>{item.clicked ? <GrCheckboxSelected /> : <GrCheckbox />}</Button>{item.name}<Button color="secondary" onClick={() => removeItem(item.id)}>   <FaTrash />   </Button></li>
+                        if (!item.clicked) {
+                            return <li key={item.id} style={item.clicked ? striker : null}><Button onClick={() => setClicked(item.id)}>{item.clicked ? <GrCheckboxSelected /> : <GrCheckbox />}</Button>{item.name}<Button color="secondary" onClick={() => removeItem(item.id)}>   <FaTrash />   </Button></li>
+                        }
                     }
                 ) 
             }
