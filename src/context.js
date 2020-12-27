@@ -39,11 +39,17 @@ function AppProvider({ children }) {
     }
 
     const clearAll = () => {
-        setItems([]);
+        const newItems = items.filter((item) => item.clicked !== false)
+        setItems(newItems);
+    }
+
+    const clearAllComplete = () => {
+        const newItems = items.filter((item) => item.clicked !== true)
+        setItems(newItems);
     }
 
     return (
-        <AppContext.Provider value={{ clearAll, setClicked, state, items, setItems, setName, handleSubmit, removeItem}} > {/*value, set value */}
+        <AppContext.Provider value={{ clearAllComplete, clearAll, setClicked, state, items, setItems, setName, handleSubmit, removeItem}} > {/*value, set value */}
             {children}
         </AppContext.Provider>
     );
